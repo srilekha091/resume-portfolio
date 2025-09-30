@@ -1,12 +1,11 @@
-import React from 'react';
-import './App.css';
+import Hero from "./components/Hero";
+import Projects from "./components/Projects";
 
 function App() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900">
-      <h1 className="text-4xl font-bold text-white">
-        Tailwind 3 + CRA 🚀
-      </h1>
+    <div>
+      <Hero />
+      <Projects />
     </div>
   );
 }

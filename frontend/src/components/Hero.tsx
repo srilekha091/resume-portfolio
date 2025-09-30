@@ -1,11 +1,8 @@
-import React from 'react';
-
-const Hero: React.FC = () => {
-    return (
-        <div>
-            {/* Hero section content goes here */}
-        </div>
-    );
-};
-
-export default Hero;
+export default function Hero() {
+  return (
+    <div className="text-center py-20 bg-gray-100">
+      <h1 className="text-4xl font-bold mb-4">Hi, I'm Your Name</h1>
+      <p className="text-lg">Full-stack Developer | React + TypeScript | Python + FastAPI</p>
+    </div>
+  );
+}

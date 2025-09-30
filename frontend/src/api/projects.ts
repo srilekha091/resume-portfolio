@@ -1,38 +1,22 @@
-import axios from 'axios';
-
-// src/api/projects.ts
+import axios from "axios";
 
 export interface Project {
-    id: string;
-    name: string;
-    description: string;
-    imageUrl?: string;
-    githubUrl?: string;
-    liveUrl?: string;
+  id: number;
+  title: string;
+  description: string;
+  tech_stack: string[];
+  github_link: string;
+  demo_link: string;
 }
 
-const API_BASE_URL = '/api/projects';
+export const fetchProjects = async (): Promise<Project[]> => {
+  const response = await axios.get("http://localhost:8000/projects");
+  return response.data;
+};
 
-export async function fetchProjects(): Promise<Project[]> {
-    const response = await axios.get<Project[]>(API_BASE_URL);
-    return response.data;
-}
-
-export async function fetchProjectById(id: string): Promise<Project> {
-    const response = await axios.get<Project>(`${API_BASE_URL}/${id}`);
-    return response.data;
-}
-
-export async function createProject(project: Omit<Project, 'id'>): Promise<Project> {
-    const response = await axios.post<Project>(API_BASE_URL, project);
-    return response.data;
-}
-
-export async function updateProject(id: string, project: Partial<Project>): Promise<Project> {
-    const response = await axios.put<Project>(`${API_BASE_URL}/${id}`, project);
-    return response.data;
-}
-
-export async function deleteProject(id: string): Promise<void> {
-    await axios.delete(`${API_BASE_URL}/${id}`);
-}
+export const fetchAISummary = async (desc: string): Promise<string> => {
+  const res = await axios.get("http://localhost:8000/ai-summary", {
+    params: { project_desc: desc },
+  });
+  return res.data.summary;
+};
