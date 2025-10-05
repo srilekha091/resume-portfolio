@@ -1,10 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
+import About from "./components/About";
 
-function About() {
-  return <h1 className="p-6 text-2xl">About Me</h1>;
-}
 function Projects() {
   return <h1 className="p-6 text-2xl">Projects</h1>;
 }

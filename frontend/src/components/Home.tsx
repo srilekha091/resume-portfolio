@@ -21,7 +21,7 @@ export default function Home() {
         <div className="mt-6 flex gap-4 justify-center">
           <Link
             to="/projects"
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg  hover:bg-blue-700 transition"
+            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
           >
             View Projects
           </Link>
